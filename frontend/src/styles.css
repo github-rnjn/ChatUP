@@ -1,0 +1,23 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .notification-badge {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+  .badge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 0px 5px 0.5px 5px;
+    height: 20px;
+  }

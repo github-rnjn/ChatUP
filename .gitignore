@@ -1,0 +1,23 @@
+# Main .gitignore file
+
+# Exclude environment variables
+.env
+
+# Exclude node_modules directories in the root and frontend
+/node_modules
+/frontend/node_modules
+
+# Exclude log files
+*.log
+
+# Exclude build artifacts (if any)
+/dist/
+/build/
+
+# Exclude OS-specific files
+.DS_Store
+Thumbs.db
+
+# Exclude IDE-specific files
+.idea/
+/vscode/
