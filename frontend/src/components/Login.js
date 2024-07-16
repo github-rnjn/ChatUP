@@ -76,7 +76,7 @@ const Login = () => {
                     <Input value={password} type={show ? 'text' : 'password'} placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
                     <InputRightElement width="4.5rem">
                         <Button h="1.75em" size="sm" onClick={() => setShow((prev) => !prev)}>
-                            {show ? "Show" : "Hide"}
+                            {show ? "Hide" : "Show"}
                         </Button>
                     </InputRightElement>
                 </InputGroup>
