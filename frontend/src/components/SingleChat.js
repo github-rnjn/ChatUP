@@ -203,6 +203,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               </>
             )}
           </Text>
+            {/* Chat Region  */}
           <Box
             display="flex"
             flexDir="column"
@@ -219,12 +220,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               <Spinner size="xl" w={20} h={20} alignSelf="center" margin="auto" />
             ) : (
               <div className='messages'>
+                {/* Chat will be shown here  */}
                 <ScrollableChat messages={messages} />
               </div>
             )}
+            {/* Chat Sending Region  */}
             <FormControl onKeyDown={sendMessage} isRequired mt={3}>
               {isTyping && typingMessage && (
                 <div>
+                  {/* This will be shown when any of the user is writing into the chatbox  */}
                   <Lottie
                   options={{
                     loop: true,
@@ -238,6 +242,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 />
                 </div>
               )}
+              {/* Chat Input area */}
               <Input
                 variant="filled"
                 bg="#E0E0E0"
@@ -249,7 +254,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             </FormControl>
           </Box>
         </>
-      ) : (
+      ) : 
+      // If no chat is selected this box will be shown 
+      (
         <Box display="flex" alignItems="center" justifyContent="center" h="100%">
           <Text fontSize="5xl" pb={3} fontFamily="Work sans" fontWeight={600}>
             ChatUP

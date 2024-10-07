@@ -32,18 +32,20 @@ const ProfileModal = ({user,children}) => {
                     >{user.name}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody display="flex" flexDirection="column" alignItems="center">
+                        {/* Profile Logo  */}
                         <Image
                         borderRadius="full"
                         boxSize="150px"
                         src={user.pic}
                         alt={user.name}
                         />
+                        {/* Email  */}
                         <Text
                         fontSize={{base:"28px",md:"30px"}}
                         fontFamily="work sans"
                         >Email:{user.email}</Text>
                     </ModalBody>
-
+                    {/* Close Button  */}
                     <ModalFooter>
                         <Button colorScheme='red' mr={3} onClick={onClose}>Close</Button>
                     </ModalFooter>

@@ -23,11 +23,14 @@ const HomePage = () => {
         borderWidth="1px"
         backgroundColor="#131842"
       >
+        {/* Title */}
         <Text fontSize="4xl" fontFamily="Work sans" textAlign="center" fontWeight="bold" color="white">
           ChatUP
         </Text>
       </Box>
+
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+        {/* Login and Signup will be divided into 2 tabs and user can switch it  */}
         <Tabs variant='soft-rounded' colorScheme='green'>
             <TabList>
                 <Tab width="50%">Log in</Tab>

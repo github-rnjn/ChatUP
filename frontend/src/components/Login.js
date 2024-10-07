@@ -66,10 +66,12 @@ const Login = () => {
 
     return (
         <VStack spacing="5px">
+            {/* Email Region */}
             <FormControl isRequired>
                 <FormLabel>Email</FormLabel>
                 <Input placeholder='Email' value={email} type='email' onChange={(e) => setEmail(e.target.value)} />
             </FormControl>
+            {/* Password Region */}
             <FormControl isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
@@ -80,6 +82,7 @@ const Login = () => {
                         </Button>
                     </InputRightElement>
                 </InputGroup>
+            {/* Login Button */}
             </FormControl>
             <Button isLoading={loading} colorScheme='blue' width='100%' style={{ marginTop: 15 }} onClick={submitHandler}>
                 Log in

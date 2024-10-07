@@ -107,25 +107,28 @@ const SideDrawer = () => {
     return (
         <>
             <Box display="flex" justifyContent="space-between" alignItems="center" w="100%" p="2px 15px 2px 15px" borderWidth="5px" backgroundColor="#131842" borderRadius="25px">
+                {/* Search Button To Search the User  */}
                 <Tooltip label="Search Users to chat" hasArrow placement='bottom-end'>
                     <Button variant="ghost" border="1px">
                         <CiSearch style={{height:"25px",width:"25px",color:"white",}} onClick={onOpen} />
                     </Button>
                 </Tooltip>
+                {/* Logo */}
                 <Text fontSize={{base:"xl",sm:"2xl"}} fontFamily="work sans" fontWeight="bold" color="white">ChatUP</Text>
+                {/* Notification Badge */}
                 <div style={{display:"flex",justifyContent:"center",alignItems:"center"}} >
                     <Menu>
                         <MenuButton p={1}>
                         <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-       {notification.length > 0 && (
-         <div className="notification-badge ">
-              <span className="badge">    
-                  {notification.length}
-              </span>
-          </div>
-          )}
-        </div>
-                            <FaBell style={{color:"white",fontSize:"20px",marginRight:"5px"}}/>
+                            {notification.length > 0 && (
+                                <div className="notification-badge ">
+                                    <span className="badge">    
+                                        {notification.length}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                        <FaBell style={{color:"white",fontSize:"20px",marginRight:"5px"}}/>
                         </MenuButton>
                         <MenuList pl={2}>
                             {
@@ -142,6 +145,7 @@ const SideDrawer = () => {
                         </MenuList>
                     </Menu>
                     <Menu>
+                        {/* Avatar Region */}
                         <MenuButton as={Button} rightIcon={<FaChevronDown/>}>
                             <Avatar size="sm" cursor="pointer" name={user.name} src={user.pic}/>
                         </MenuButton>
@@ -154,6 +158,7 @@ const SideDrawer = () => {
                     </Menu>
                 </div>
             </Box>
+            {/* Side drawer */}
             <Drawer
             isOpen={isOpen}
             placement='left'
@@ -166,12 +171,14 @@ const SideDrawer = () => {
                     <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
 
                     <DrawerBody>
+                        {/* Search Region */}
                         <Box display="flex" pb={2}>
                             <Input placeholder='Search by name or email' mr={2} value={search} onChange={(e)=>setSearch(e.target.value)}/>
                             <Button onClick={handleSearch}>
                                 <CiSearch style={{height:"20px",width:"20px"}} />
                             </Button>
                         </Box>
+                        {/* Show the searched results */}
                         {
                             loading?(
                                 <ChatLoading/>

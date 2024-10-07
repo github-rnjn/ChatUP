@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+//port setup
 const PORT = process.env.PORT || 5000;
 
 const path = require("path")
@@ -9,13 +10,16 @@ const connectDatabase = require("./config/db");
 
 const dotenv = require("dotenv");
 
+//routes
 const userRoutes = require("./routes/user.route");
 const chatRoutes = require("./routes/chat.route");
 const messageRoutes = require("./routes/message.route");
 
+//middleware
 const { notFound, errorHandler } = require("./middleware/error.middleware");
 
 dotenv.config();
+//connect to database
 connectDatabase();
 
 app.use(express.json()); // to accept the JSON data
@@ -37,6 +41,7 @@ if(process.env.NODE_ENV==='production'){
   })
 }
 
+//error handling
 app.use(notFound);
 app.use(errorHandler);
 

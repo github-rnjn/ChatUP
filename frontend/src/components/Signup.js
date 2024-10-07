@@ -109,18 +109,22 @@ const Signup = () => {
     }
     return (
         <VStack spacing="5px">
+        {/* Name Region */}
         <FormControl id="first-name" isRequired>
             <FormLabel>Name</FormLabel>
             <Input value={name} placeholder='Your Name' onChange={(e)=>setName(e.target.value)}/>
         </FormControl>
+        {/* Email Region */}
         <FormControl id="email" isRequired>
             <FormLabel>Email</FormLabel>
             <Input placeholder='Email' value={email} type='email' onChange={(e)=>setEmail(e.target.value)}/>
         </FormControl>
+        {/* Password Region */}
         <FormControl id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <InputGroup>
                 <Input value={password} type={show?'text':'password'} placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
+                {/* Hide and Show Feature */}
                 <InputRightElement width="4.5rem">
                     <Button h="1.75em" size="sm" onClick={()=>setShow((prev)=>!prev)}>
                         {show?"Hide":"Show"}
@@ -128,10 +132,12 @@ const Signup = () => {
                 </InputRightElement>
             </InputGroup>
         </FormControl>
+        {/* Confirm Password Region */}
         <FormControl id="confirm-password" isRequired>
             <FormLabel>Confirm Password</FormLabel>
             <InputGroup>
                 <Input value={confirmPassword} type={show?'text':'password'} placeholder='Confirm Password' onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                {/* Hide and Show Feature */}
                 <InputRightElement width="4.5rem">
                     <Button h="1.75em" size="sm" onClick={()=>setShow((prev)=>!prev)}>
                         {show?"Hide":"Show"}
@@ -139,6 +145,7 @@ const Signup = () => {
                 </InputRightElement>
             </InputGroup>
         </FormControl>
+        {/* Profile Picture Upload Region */}
         <FormControl id="pic" isRequired>
             <FormLabel>Upload Your Profile Picture</FormLabel>
             <Input
@@ -150,6 +157,7 @@ const Signup = () => {
               onChange={(e) => postDetails(e.target.files[0])}
             />
         </FormControl>
+        {/* Signup Button */}
         <Button isLoading={loading} colorScheme='blue' width='100%' style={{marginTop:15}} onClick={submitHandler}>
             Sign Up
         </Button>

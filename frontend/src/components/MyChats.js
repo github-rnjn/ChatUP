@@ -41,36 +41,36 @@ const MyChats = ({fetchAgain}) => {
     
     return (
         <Box
-        display={{base:selectedChat?"none":"flex",md:"flex"}}
-        flexDir="column"
-        alignItems="center"
-        p={3}
-        w={{base:"100%",md:"31%"}}
-        borderRadius="lg"
-        borderWidth="1px"
-        backgroundColor="#2F3645"
+          display={{base:selectedChat?"none":"flex",md:"flex"}}
+          flexDir="column"
+          alignItems="center"
+          p={3}
+          w={{base:"100%",md:"31%"}}
+          borderRadius="lg"
+          borderWidth="1px"
+          backgroundColor="#2F3645"
         >
             <Box
-            pb={3}
-            px={3}
-            fontSize={{ base: "20px", md: "30px" }}
-            fontFamily="Work sans"
-            display="flex"
-            w="100%"
-            justifyContent="space-between"
-            alignItems="center"
+              pb={3}
+              px={3}
+              fontSize={{ base: "20px", md: "30px" }}
+              fontFamily="Work sans"
+              display="flex"
+              w="100%"
+              justifyContent="space-between"
+              alignItems="center"
             >
-            <h1 style={{fontSize:"25px", fontWeight:"800",color:"white"}}>My Chats</h1>
-            <GroupChatModal>
-              <Button
-              d="flex"
-              fontSize={{ base: "10px", lg: "17px" }}
-              rightIcon={<IoMdAdd />}
-              px={2}
-              >
-                  Create Group
-              </Button>
-            </GroupChatModal>
+              <h1 style={{fontSize:"25px", fontWeight:"800",color:"white"}}>My Chats</h1>
+              <GroupChatModal>
+                <Button
+                d="flex"
+                fontSize={{ base: "10px", lg: "17px" }}
+                rightIcon={<IoMdAdd />}
+                px={2}
+                >
+                    Create Group
+                </Button>
+              </GroupChatModal>
             </Box>
             <Box
             display="flex"
@@ -82,6 +82,7 @@ const MyChats = ({fetchAgain}) => {
             borderRadius="lg"
             overflowY="hidden"
             >
+              {/* Display of the users which whom user have chatted */}
             {chats ? (
           <Stack overflowY="scroll">
             {chats.map((chat) => (

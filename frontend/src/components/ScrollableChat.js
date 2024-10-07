@@ -8,6 +8,7 @@ const ScrollableChat = ({messages}) => {
     const {user} = ChatState()
   return (
     <ScrollableFeed>
+        {/* Chat message will be shown here  */}
         {messages && messages.map((m,i)=>(
             <div key={m._id} style={{display:"flex"}}>
             {(isSameSender(messages, m, i, user._id) || isLastMessage(messages, i, user._id)) && (
